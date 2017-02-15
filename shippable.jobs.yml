@@ -1,1 +1,99 @@
 
+jobs:  
+  - name: allpl-manifestN1
+    type: manifest
+    steps:
+      #- IN: allpl-image1
+      #  versionNumber: 2476
+    #  - IN: allpl-manifestnew
+     # - IN: allpl-image2
+      - IN: allpl-image2
+      - IN: plv2-dopts1
+      - IN: allpl-lb
+       # versionNumber: 100
+      - IN: triggertestS1
+      - TASK: managed
+    on_start:
+      - NOTIFY: mySlackS1
+      - NOTIFY: myEmailS1
+      - script: echo 'y1'
+    on_success:
+    #   #- uname -a
+      - NOTIFY: myEmailS1
+      - NOTIFY: mySlackS1
+     # - script: echo 'infra test'
+      #- script: pwd
+      #- script: ls
+      #- script: echo 'newtesting success'
+    # # - script: ./IN/sample-script-3/gitRepo/echo.sh
+    on_failure:
+      #- script: echo 'testing1 failure'
+      #- script: echo 'failure runSh'
+      #- script: pwd
+      #- script: ls
+      - NOTIFY: myEmailS1
+      - NOTIFY: mySlackS1    
+      
+      
+  - name: runSh1
+    type: runSh
+    serial: false
+    steps:
+      - IN: sample-script-3  #girepo reso name
+      #- IN: allpl-image1
+      #- IN: allpl-version
+      #  versionName: 28361828b3079fce434d84b1f8388aed167be15f
+      # versionNumber: 1
+     # - IN: foo-resource
+     # - IN: env
+      - IN: triggertestS1
+      - TASK:
+        - script: ./IN/sample-script-3/gitRepo/echo.sh
+        #- script: pwd
+        #- script: ls
+        - script: echo 'testrunSh'
+        - script: export FOO=bar
+        - script: export FOO1=bar1
+        - script: echo $FOO && echo $FOO1
+        # - script: "node --version"
+        # - script: echo "$foo"
+        # - script: echo "$n1"
+        # - script: echo 'new'
+    #     #- script: "sudo apt-get install tree"
+    
+    on_start:
+      - NOTIFY: mySlackS1
+      - NOTIFY: myEmailS1
+      - script: echo 'y1'
+    on_success:
+    #   #- uname -a
+      - NOTIFY: myEmailS1
+      - NOTIFY: mySlackS1
+      - script: echo 'infra test'
+      - script: pwd
+      - script: ls
+      - script: echo 'newtesting success'
+    # # - script: ./IN/sample-script-3/gitRepo/echo.sh
+    on_failure:
+      - script: echo 'testing1 failure'
+      - script: echo 'failure runSh'
+      - script: pwd
+      - script: ls
+      - NOTIFY: mySlackS1
+    always:
+      - script: echo "This works"
+      - NOTIFY: myEmailS1
+      - NOTIFY: mySlackS1  
+  
+      
+  - name: runSh2
+    type: runSh
+    serial: false
+    steps:
+      - IN: sample-testprivate
+       # switch: off
+      - IN: triggertestS1
+      #- OUT: testallpl-ecsdeploy67
+      - IN: runShtest1
+      - TASK:
+        - script: ./IN/sample-testprivate/gitRepo/echo.sh

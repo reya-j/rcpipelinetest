@@ -1,1 +1,16 @@
 
+triggers:
+  - name: rc1
+    type: trigger
+    version:
+      counter: 63
+      
+  - name: rc2
+    type: trigger
+    version:
+      counter: 427
+
+  - name: rc3
+    type: trigger
+    version:
+      counter: 0

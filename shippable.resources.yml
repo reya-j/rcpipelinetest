@@ -1,5 +1,5 @@
 resources:
-  - name: sample-runSh1
+  - name: sample-script-3
     type: gitRepo
     integration: github
     pointer:
@@ -7,7 +7,7 @@ resources:
       branch: master
       
       
-  - name: sample-runprivate
+  - name: sample-testprivate
     type: gitRepo
     integration: github
     pointer:

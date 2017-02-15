@@ -1,1 +1,123 @@
+resources:
+  - name: sample-runSh1
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: shiphitchcock4/sample-script-3
+      branch: master
+      
+      
+  - name: sample-runprivate
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: shiphitchcock4/testprivate
+      branch: master
+      
+  - name: mySlackS1
+    type: notification
+    integration: "ship-slack"
+    pointer:
+      recipients:
+       # - theyare
+        - "#pipeline-pvt"
+        - "#pipeline-public"
+        - "@shiphitchcock4"
 
+  - name: myEmailS1
+    type: notification
+    pointer:
+      method: email
+      recipients: 
+        - "sreya@shippable.com"
+        - "shiphitchcock4@gmail.com"
+        - "sreyaj10@gmail.com"
+ 
+      
+  - name: allpl-version
+    type: version
+    seed:
+      versionName: "1.2.123-beta"
+        
+  - name: allpl-image1
+    type: image
+    integration: ship4-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+      
+  - name: allpl-image2
+    type: image
+    integration: ship4-docker
+    pointer:
+      sourceName: "shiphitchcock4/hitchcock4_sample_nodenew"
+    seed:
+      versionName: "latest"
+      
+  - name: allpl-dopts
+    type: dockerOptions
+    version:
+      memory: 100
+      
+  - name: allpl-lb
+    type: loadBalancer
+    pointer:
+      sourceName: v2betatest
+      
+  - name: allpl-scale2
+    type: replicas
+    version:
+      count: 2
+      
+  - name: foo-resource
+    type: params
+    version:
+      params:
+        foo: bar
+        #goo= gubu
+    #  secure: 123sreFg/Ri785VMzRK4YFuauayX7e6JkmU7I6kC5jVKA+vuSsl315bPBiJNLBFX36vP/V8D0r1ql3tE6qLoe7SfLocLggeVs7PVI/r+Oyr4zNzTXd2zN7AfpNlr5dOOPtnFr9hqUbXNZiuCIUIx+uLqytomaezRuDtK0FyasQWqJ6jqvUNZGuG/62P32UoZfkmxhgGS/dXJjuGw2YhiP8fPfrjobmrJrtvTPyklOyTAqBNzwq7ONZfq+Pa2mI8unXEkB5K0cilhSAh5tZcDd4XC+YJMRf/oja7/6eebOlEl3xZSjRGO8GSdoUdltZrlLR5olpPiEFFLr9htHbhqjH7joMug==
+  
+  - name: foo-resource2
+    type: params
+    version:
+      params:
+        Goo: baY
+      
+  #- name: sample-script-runSh2
+   # type: gitRepo
+   # integration: github
+   # pointer:
+    #  sourceName: shiphitchcock4/sample-script-3
+    #  branch: master
+      
+  
+  
+ # - name: env
+  #  type: params
+   # version:
+    # params:
+     #    foo: bar1
+      #   secure: K1p89sALhtCKwSew/bt7mw/nQ0E3pZ5uke5poONJ4/3k9ulWwUPvTgdCiSleRqYYNRi5BQxC06hYYrz3ExFvWfZPN+wVTtDKVVm4UICq2pZZIGGUYpjmekS/s+p4IAtjv6CYIJxwl2H1zHjTFsWsXWnUGlKdjT7hkgxPGi8ac63OcuncFOCtnwhLxyZJ83ssqMpPTNvBwncIrKgL8Ijt0gmjTqa6AH4zgN54NC0wrCdom+JWFJ930GY1eqOEVMUq+EbzS0+65OqDT/lDOwLLmvvYwWBNL0SGlB4iQJ000b75QMmN/ovrFw3Rqozr4PPN/EaNEXlxtYzO6SA9mklOrF6Q==
+     
+  #- name: allpl-dclcluster
+   # type: cluster
+   # integration: ship-dcl
+   # pointer:
+    #  sourceName : "cluster-dcl"
+      
+  #- name: plv2-dopts1
+   # type: dockerOptions
+   # version:
+    #  memory: 64
+    #  cpuShares: 8
+    #  portMappings:
+     #   - "80:80"
+        
+          
+  #- name: allpl-ecscluster
+   # type: cluster
+    #integration: ship-ecs
+    #pointer:
+     # sourceName : "testCL"
+     # region: "us-west-2"     

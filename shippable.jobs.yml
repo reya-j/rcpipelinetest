@@ -11,7 +11,7 @@ jobs:
       - IN: plv2-dopts1
       - IN: allpl-lb
        # versionNumber: 100
-      - IN: triggertestS1
+      - IN: rc1
       - TASK: managed
     on_start:
       - NOTIFY: mySlackS1
@@ -46,7 +46,7 @@ jobs:
       # versionNumber: 1
      # - IN: foo-resource
      # - IN: env
-      - IN: triggertestS1
+      - IN: rc1
       - TASK:
         - script: ./IN/sample-script-3/gitRepo/echo.sh
         #- script: pwd
@@ -92,8 +92,8 @@ jobs:
     steps:
       - IN: sample-testprivate
        # switch: off
-      - IN: triggertestS1
+      - IN: rc1
       #- OUT: testallpl-ecsdeploy67
-      - IN: runShtest1
+      - IN: runSh1
       - TASK:
         - script: ./IN/sample-testprivate/gitRepo/echo.sh

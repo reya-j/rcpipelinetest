@@ -14,24 +14,24 @@ resources:
       sourceName: shiphitchcock4/testprivate
       branch: master
       
-  - name: mySlackS1
-    type: notification
-    integration: "ship-slack"
-    pointer:
-      recipients:
+#  - name: mySlackS1
+ #   type: notification
+ #   integration: "ship-slack"
+ #   pointer:
+  #    recipients:
        # - theyare
-        - "#pipeline-pvt"
-        - "#pipeline-public"
-        - "@shiphitchcock4"
+   #     - "#pipeline-pvt"
+   #     - "#pipeline-public"
+   #     - "@shiphitchcock4"
 
-  - name: myEmailS1
-    type: notification
-    pointer:
-      method: email
-      recipients: 
-        - "sreya@shippable.com"
-        - "shiphitchcock4@gmail.com"
-        - "sreyaj10@gmail.com"
+#  - name: myEmailS1
+#    type: notification
+#    pointer:
+#      method: email
+ #     recipients: 
+  #      - "sreya@shippable.com"
+   #     - "shiphitchcock4@gmail.com"
+    #    - "sreyaj10@gmail.com"
  
       
   - name: allpl-version

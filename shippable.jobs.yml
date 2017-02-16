@@ -7,9 +7,9 @@ jobs:
       #  versionNumber: 2476
     #  - IN: allpl-manifestnew
      # - IN: allpl-image2
-      - IN: allpl-image2
-      - IN: plv2-dopts1
-      - IN: allpl-lb
+      - IN: allpl-image21
+      - IN: plv2-dopts11
+      - IN: allpl-lb1
        # versionNumber: 100
       - IN: rc1
       - TASK: managed
@@ -35,11 +35,11 @@ jobs:
       #- NOTIFY: mySlackS1    
       
       
-  - name: runSh1
+  - name: 1
     type: runSh
     serial: false
     steps:
-      - IN: sample-script-3  #girepo reso name
+      - IN: sample-script-31  #girepo reso name
       #- IN: allpl-image1
       #- IN: allpl-version
       #  versionName: 28361828b3079fce434d84b1f8388aed167be15f
@@ -48,7 +48,7 @@ jobs:
      # - IN: env
       - IN: rc1
       - TASK:
-        - script: ./IN/sample-script-3/gitRepo/echo.sh
+        - script: ./IN/sample-script-31/gitRepo/echo.sh
         #- script: pwd
         #- script: ls
         - script: echo 'testrunSh'
@@ -86,14 +86,14 @@ jobs:
       #- NOTIFY: mySlackS1  
   
       
-  - name: runSh2
+  - name: 2
     type: runSh
     serial: false
     steps:
-      - IN: sample-testprivate
+      - IN: sample-testprivate1
        # switch: off
       - IN: rc1
       #- OUT: testallpl-ecsdeploy67
-      - IN: runSh1
+      - IN: 1
       - TASK:
         - script: ./IN/sample-testprivate/gitRepo/echo.sh

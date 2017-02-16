@@ -14,13 +14,13 @@ jobs:
       - IN: rc1
       - TASK: managed
     on_start:
-      - NOTIFY: mySlackS1
-      - NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1
+      -# NOTIFY: myEmailS1
       - script: echo 'y1'
     on_success:
     #   #- uname -a
-      - NOTIFY: myEmailS1
-      - NOTIFY: mySlackS1
+      #- NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1
      # - script: echo 'infra test'
       #- script: pwd
       #- script: ls
@@ -31,8 +31,8 @@ jobs:
       #- script: echo 'failure runSh'
       #- script: pwd
       #- script: ls
-      - NOTIFY: myEmailS1
-      - NOTIFY: mySlackS1    
+      #- NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1    
       
       
   - name: runSh1
@@ -62,13 +62,13 @@ jobs:
     #     #- script: "sudo apt-get install tree"
     
     on_start:
-      - NOTIFY: mySlackS1
-      - NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1
+      #- NOTIFY: myEmailS1
       - script: echo 'y1'
     on_success:
     #   #- uname -a
-      - NOTIFY: myEmailS1
-      - NOTIFY: mySlackS1
+      #- NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1
       - script: echo 'infra test'
       - script: pwd
       - script: ls
@@ -82,8 +82,8 @@ jobs:
       - NOTIFY: mySlackS1
     always:
       - script: echo "This works"
-      - NOTIFY: myEmailS1
-      - NOTIFY: mySlackS1  
+      #- NOTIFY: myEmailS1
+      #- NOTIFY: mySlackS1  
   
       
   - name: runSh2

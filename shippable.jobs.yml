@@ -1,6 +1,6 @@
 
 jobs:  
-  - name: allpl-manifestN1
+  - name: one
     type: manifest
     steps:
       #- IN: allpl-image1
@@ -35,7 +35,7 @@ jobs:
       #- NOTIFY: mySlackS1    
       
       
-  - name: 1
+  - name: two
     type: runSh
     serial: false
     steps:
@@ -86,7 +86,7 @@ jobs:
       #- NOTIFY: mySlackS1  
   
       
-  - name: 2
+  - name: three
     type: runSh
     serial: false
     steps:
@@ -94,6 +94,6 @@ jobs:
        # switch: off
       - IN: rc1
       #- OUT: testallpl-ecsdeploy67
-      - IN: 1
+      - IN: two
       - TASK:
-        - script: ./IN/sample-testprivate/gitRepo/echo.sh
+        - script: ./IN/sample-testprivate1/gitRepo/echo.sh

@@ -2,55 +2,21 @@
 jobs:  
        
       
-  - name: two
-    type: runSh
-    serial: false
-    steps:
-      - IN: sample-script-31  #girepo reso name
+#  - name: two
+ #   type: runSh
+  #  serial: false
+   # steps:
+    #  - IN: sample-script-31  #girepo reso name
       #- IN: allpl-image1
       #- IN: allpl-version
       #  versionName: 28361828b3079fce434d84b1f8388aed167be15f
       # versionNumber: 1
      # - IN: foo-resource
      # - IN: env
-      - IN: rc1
-      - TASK:
-        - script: ./IN/sample-script-31/gitRepo/echo.sh
+     # - IN: rc1
+      #- TASK:
+       # - script: ./IN/sample-script-31/gitRepo/echo.sh
         #- script: pwd
-        #- script: ls
-        - script: echo 'testrunSh'
-        - script: export FOO=bar
-        - script: export FOO1=bar1
-        - script: echo $FOO && echo $FOO1
-        # - script: "node --version"
-        # - script: echo "$foo"
-        # - script: echo "$n1"
-        # - script: echo 'new'
-    #     #- script: "sudo apt-get install tree"
-    
-    on_start:
-      #- NOTIFY: mySlackS1
-      #- NOTIFY: myEmailS1
-      - script: echo 'y1'
-    on_success:
-    #   #- uname -a
-      #- NOTIFY: myEmailS1
-      #- NOTIFY: mySlackS1
-      - script: echo 'infra test'
-      - script: pwd
-      - script: ls
-      - script: echo 'newtesting success'
-    # # - script: ./IN/sample-script-3/gitRepo/echo.sh
-    on_failure:
-      - script: echo 'testing1 failure'
-      - script: echo 'failure runSh'
-      - script: pwd
-      - script: ls
-     # - NOTIFY: mySlackS1
-    always:
-      - script: echo "This works"
-      #- NOTIFY: myEmailS1
-      #- NOTIFY: mySlackS1  
   
       
 #  - name: three

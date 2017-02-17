@@ -1,10 +1,10 @@
 resources:
- # - name: sample-script-31
-  #  type: gitRepo
-   # integration: github
-   # pointer:
-    #  sourceName: shiphitchcock4/sample-script
-     # branch: master
+  - name: samplegitrepo
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: shiphitchcock4/sample-script
+      branch: master
       
       
   - name: sample-testprivate1

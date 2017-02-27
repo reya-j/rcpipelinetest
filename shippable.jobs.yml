@@ -24,7 +24,7 @@ jobs:
  #   serial: false
     steps:
       - IN: sample-testprivate1
-       # switch: off
+        switch: off
       - IN: rc1
       - OUT: allpl-image21
       - TASK:

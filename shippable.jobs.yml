@@ -42,3 +42,15 @@ jobs:
        # versionName: "srelatest"
       #- IN: triggertestS1
       - TASK: managed
+  - name: MANI22
+    type: manifest
+    steps:
+      - IN: allpl-image21
+     # - IN: allpl-release11
+      #  switch: off
+        #switch: off
+      #- IN: allpl-image1
+       # versionNumber: 29000
+       # versionName: "srelatest"
+      #- IN: triggertestS1
+      - TASK: managed

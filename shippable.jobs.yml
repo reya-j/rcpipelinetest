@@ -26,6 +26,8 @@ jobs:
       - IN: sample-testprivate1
       #  switch: off
       - IN: rc1
+      - IN: mySlackS1
+      - IN: myEmailS1
       - IN: allpl-image21
       - TASK:
         - script: ./IN/sample-testprivate1/gitRepo/echo.sh

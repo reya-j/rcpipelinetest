@@ -30,7 +30,7 @@ jobs:
      
       - IN: allpl-image21
       - TASK:
-        - script: ./IN/sample-testprivate1/gitRepo/echo.sh
+        - script: ./IN/sample-testprivate1sre/gitRepo/echo.sh
     on_success:
       - NOTIFY: mySlackS1
       - NOTIFY: myEmailS1

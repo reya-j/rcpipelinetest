@@ -2,7 +2,7 @@
 jobs:  
        
       
-  - name: test
+  - name: two
     type: runSh
   #  serial: false
     steps:

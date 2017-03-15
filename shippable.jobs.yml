@@ -3,7 +3,7 @@ jobs:
        
       
   - name: two
-    type: runSh
+    type: runsh
   #  serial: false
     steps:
     #  - IN: sample-script-31  #girepo reso name
